@@ -20,13 +20,13 @@ namespace MyTestForm.dao
         }
 
         /// <summary>
-        /// 查询全部
+        /// 查询全部未删除的数据
         /// </summary>
         /// <returns>查询结果</returns>
         public IList<Consumer> SelectAll()
         {
-            string SQL = SQLBuilder.BuilSelectAllSQL(TableName);
-            var consumers = Connection.QuerySql<Consumer>(SQL);
+            string SQL = SQLBuilder.BuildSelectSQL(new {is_deleted = false },TableName);
+            var consumers = Connection.QuerySql<Consumer>(SQL,new { is_deleted = false });
             return consumers;
         }
 
@@ -43,14 +43,28 @@ namespace MyTestForm.dao
         }
 
         /// <summary>
+        /// 条件模糊查询
+        /// </summary>
+        /// <param name="condition">查询条件</param>
+        /// <returns>查询结果</returns>
+        public IList<Consumer> SelectLike(dynamic condition)
+        {
+            string SQL = SQLBuilder.BuildSelectLikeSQL(condition, TableName);
+            var consumers = Connection.QuerySql<Consumer>(SQL, (object)condition);
+            return consumers;
+        }
+
+        /// <summary>
         /// 删除
         /// </summary>
         /// <param name="condition">删除条件</param>
         /// <returns>删除是否成功</returns>
         public bool Delete(dynamic condition)
         {
-            string SQL = SQLBuilder.BuildDeleteSQL(condition, TableName);
-            int result = Connection.ExecuteSql(SQL, (object)condition);
+            //string SQL = SQLBuilder.BuildDeleteSQL(condition, TableName);
+            //将是否删除设置为1
+            string SQL = SQLBuilder.BuildUpdateSQL(new { is_deleted = true }, condition, TableName);
+            int result = Connection.ExecuteSql(SQL, new { is_deleted = true, consumer_id = condition.consumer_id });
             return result == 1 ? true : false;
         }
 

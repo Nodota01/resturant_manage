@@ -33,11 +33,15 @@
             this.phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consumer_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_deleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.InsertButton = new System.Windows.Forms.ToolStripButton();
             this.UpdateButton = new System.Windows.Forms.ToolStripButton();
             this.DeleteButton = new System.Windows.Forms.ToolStripButton();
             this.ExitButton = new System.Windows.Forms.ToolStripButton();
+            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
+            this.SearchTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.SearchButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,10 +58,12 @@
             this.consumer_name,
             this.phone_number,
             this.gender,
-            this.consumer_id});
+            this.consumer_id,
+            this.is_deleted});
             this.dataGridView.Location = new System.Drawing.Point(12, 28);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 23;
             this.dataGridView.Size = new System.Drawing.Size(776, 410);
             this.dataGridView.TabIndex = 0;
@@ -91,13 +97,24 @@
             this.consumer_id.ReadOnly = true;
             this.consumer_id.Visible = false;
             // 
+            // is_deleted
+            // 
+            this.is_deleted.DataPropertyName = "is_deleted";
+            this.is_deleted.HeaderText = "is_deleted";
+            this.is_deleted.Name = "is_deleted";
+            this.is_deleted.ReadOnly = true;
+            this.is_deleted.Visible = false;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.InsertButton,
             this.UpdateButton,
             this.DeleteButton,
-            this.ExitButton});
+            this.ExitButton,
+            this.RefreshButton,
+            this.SearchTextBox,
+            this.SearchButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -111,6 +128,7 @@
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.Size = new System.Drawing.Size(52, 22);
             this.InsertButton.Text = "添加";
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // UpdateButton
             // 
@@ -119,6 +137,7 @@
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(52, 22);
             this.UpdateButton.Text = "更改";
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DeleteButton
             // 
@@ -138,6 +157,31 @@
             this.ExitButton.Text = "退出";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Image = global::MyTestForm.Properties.Resources.Refresh;
+            this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(52, 22);
+            this.RefreshButton.Text = "刷新";
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Image = global::MyTestForm.Properties.Resources.Search;
+            this.SearchButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(52, 22);
+            this.SearchButton.Text = "查找";
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // ConsumerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -146,7 +190,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView);
             this.Name = "ConsumerList";
-            this.Text = "ConsumerList";
+            this.Text = "消费者列表";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -158,14 +202,18 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn consumer_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn consumer_id;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton InsertButton;
         private System.Windows.Forms.ToolStripButton UpdateButton;
         private System.Windows.Forms.ToolStripButton DeleteButton;
         private System.Windows.Forms.ToolStripButton ExitButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn consumer_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn consumer_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn is_deleted;
+        private System.Windows.Forms.ToolStripButton RefreshButton;
+        private System.Windows.Forms.ToolStripTextBox SearchTextBox;
+        private System.Windows.Forms.ToolStripButton SearchButton;
     }
 }

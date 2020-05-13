@@ -28,6 +28,7 @@ namespace MyTestForm.Util
             foreach (Control control in subPanelControls)
             {
                 PropertyInfo property = null;
+                //从控件名称找属性
                 if (propertiesDir.TryGetValue(control.Name, out property))
                 {
                     //如果是textbox则获取内容
@@ -44,11 +45,12 @@ namespace MyTestForm.Util
                             property.SetValue(obj, Convert.ChangeType(textBox.Text, property.PropertyType));
                         }
                     }
-                    //如果是复选框则给01
+                    //如果是复选框则根据选择的内容填入对象
                     ComboBox comboBox = control as ComboBox;
                     if (comboBox != null)
                     {
-                        bool value = comboBox.SelectedIndex == 0 ? false : true;
+                        //bool value = comboBox.SelectedIndex == 0 ? false : true;
+                        int value = comboBox.SelectedIndex;
                         property.SetValue(obj, value);
                     }
                 }
@@ -85,8 +87,9 @@ namespace MyTestForm.Util
                     ComboBox comboBox = control as ComboBox;
                     if (comboBox != null)
                     {
-                        bool value = (bool)property.GetValue(obj);
-                        comboBox.SelectedIndex = value==false ? 0 : 1;
+                        //bool value = (bool)property.GetValue(obj);
+                        int value = (int)property.GetValue(obj);
+                        comboBox.SelectedIndex = value;
                     }
                 }
             }

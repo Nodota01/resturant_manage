@@ -20,6 +20,8 @@ namespace MyTestForm.domain
 
         public string phone_number { get; set; }
 
-        public string gender { get; set; }
+        public int gender { get; set; }
+
+        public bool is_deleted { get; set; }
     }
 }

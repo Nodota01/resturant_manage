@@ -89,6 +89,12 @@
     <Compile Include="domain\Consumer.cs" />
     <Compile Include="domain\Patient.cs" />
     <Compile Include="Entrance.cs" />
+    <Compile Include="Forms\ConsumerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConsumerEdit.Designer.cs">
+      <DependentUpon>ConsumerEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ConsumerList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Util\Binding.cs" />
     <Compile Include="Util\SQLBuilder.cs" />
     <Compile Include="Util\Utils.cs" />
+    <EmbeddedResource Include="Forms\ConsumerEdit.resx">
+      <DependentUpon>ConsumerEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ConsumerList.resx">
       <DependentUpon>ConsumerList.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +144,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Refresh.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -50,6 +50,33 @@ namespace MyTestForm.Util
         }
 
         /// <summary>
+        /// 拼接模糊查询语句
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
+        public static string BuildSelectLikeSQL(dynamic condition, string tableName)
+        {
+            PropertyInfo[] conProperties = condition.GetType().GetProperties();
+            StringBuilder strBuilder = new StringBuilder();
+            strBuilder.Append("SELECT * FROM ").Append(tableName).Append(" WHERE ");
+            if (conProperties.Length == 1)
+            {
+                strBuilder.Append(conProperties[0].Name).Append(" LIKE ").Append("\"%\"@").Append(conProperties[0].Name).Append("\"%\"");
+            }
+            else
+            {
+                foreach (PropertyInfo property in conProperties)
+                {
+                    strBuilder.Append(conProperties[0].Name).Append(" LIKE ").Append("\"%\"@").Append(conProperties[0].Name).Append("\"%\"@");
+                    strBuilder.Append(" AND ");
+                }
+                strBuilder.Append(" 0=0 ");
+            }
+            return strBuilder.ToString();
+        }
+
+        /// <summary>
         /// 拼接更新SQL语句
         /// </summary>
         /// <param name="obj">更新实体</param>
