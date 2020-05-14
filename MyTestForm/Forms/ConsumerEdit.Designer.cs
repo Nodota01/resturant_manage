@@ -65,7 +65,7 @@
             this.gender.Items.AddRange(new object[] {
             "女",
             "男"});
-            this.gender.Location = new System.Drawing.Point(272, 230);
+            this.gender.Location = new System.Drawing.Point(316, 247);
             this.gender.Name = "gender";
             this.gender.Size = new System.Drawing.Size(121, 20);
             this.gender.TabIndex = 5;
@@ -73,7 +73,7 @@
             // phone_number
             // 
             this.phone_number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phone_number.Location = new System.Drawing.Point(272, 164);
+            this.phone_number.Location = new System.Drawing.Point(316, 181);
             this.phone_number.MaxLength = 45;
             this.phone_number.Name = "phone_number";
             this.phone_number.Size = new System.Drawing.Size(186, 21);
@@ -82,7 +82,7 @@
             // consumer_name
             // 
             this.consumer_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.consumer_name.Location = new System.Drawing.Point(272, 96);
+            this.consumer_name.Location = new System.Drawing.Point(316, 113);
             this.consumer_name.Name = "consumer_name";
             this.consumer_name.Size = new System.Drawing.Size(186, 21);
             this.consumer_name.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 12F);
-            this.label3.Location = new System.Drawing.Point(225, 230);
+            this.label3.Location = new System.Drawing.Point(269, 247);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 2;
@@ -101,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.Location = new System.Drawing.Point(194, 169);
+            this.label2.Location = new System.Drawing.Point(238, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 1;
@@ -111,7 +111,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(225, 99);
+            this.label1.Location = new System.Drawing.Point(269, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 0;

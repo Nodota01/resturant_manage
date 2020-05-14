@@ -13,7 +13,7 @@ namespace MyTestForm
     {
         public static void Main(string[] args)
         {
-            Application.Run(new ConsumerList());
+            Application.Run(new Login());
             
         }
     }

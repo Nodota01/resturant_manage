@@ -64,7 +64,7 @@ namespace MyTestForm.Forms
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
@@ -76,6 +76,7 @@ namespace MyTestForm.Forms
         {
             ConsumerEdit consumerEdit = new ConsumerEdit();
             consumerEdit.ShowDialog();
+            this.RefreshData();
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
@@ -83,14 +84,12 @@ namespace MyTestForm.Forms
             //获取id后进入edit
             if (dataGridView.CurrentRow != null)
             {
-                int index = index = dataGridView.CurrentRow.Index;
+                int index  = dataGridView.CurrentRow.Index;
                 string consumer_id = dataGridView.Rows[index].Cells["consumer_id"].Value.ToString();
                 ConsumerEdit consumerEdit = new ConsumerEdit(consumer_id);
                 //退出编辑后刷新数据
-                if(consumerEdit.ShowDialog() == DialogResult.OK)
-                {
-                    this.RefreshData();
-                }
+                consumerEdit.ShowDialog();
+                this.RefreshData();
             }
             else
             {

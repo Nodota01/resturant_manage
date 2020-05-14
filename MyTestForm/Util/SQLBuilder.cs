@@ -10,7 +10,7 @@ namespace MyTestForm.Util
     class SQLBuilder
     {
 
-        public static string BuilSelectAllSQL(string tableName)
+        public static string BuildSelectAllSQL(string tableName)
         {
             return "SELECT * FROM " + tableName;
         }
