@@ -1,5 +1,4 @@
-﻿using ConsoleApp1.dao;
-using MyTestForm.dao;
+﻿using MyTestForm.dao;
 using MyTestForm.domain;
 using System;
 using System.Collections.Generic;
@@ -93,14 +92,6 @@ namespace MyTestForm.Forms
             }
         }
 
-        /// <summary>
-        /// 关闭时返回DialogResult
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ConsumerEdit_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-        }
+        
     }
 }

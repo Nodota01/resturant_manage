@@ -119,6 +119,18 @@
     <Compile Include="Forms\DeskList.Designer.cs">
       <DependentUpon>DeskList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeEdit.Designer.cs">
+      <DependentUpon>EmployeeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeList.Designer.cs">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeskList.resx">
       <DependentUpon>DeskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeEdit.resx">
+      <DependentUpon>EmployeeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeList.resx">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

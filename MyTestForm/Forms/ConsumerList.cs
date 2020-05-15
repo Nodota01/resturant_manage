@@ -16,12 +16,12 @@ namespace MyTestForm.Forms
     public partial class ConsumerList : Form
     {
 
-        private ConsumerDao ConsumerDao;
+        private ConsumerDao consumerDao;
 
         public ConsumerList()
         {
             InitializeComponent();
-            ConsumerDao = new ConsumerDao();
+            consumerDao = new ConsumerDao();
             RefreshData();
             
         }
@@ -31,8 +31,9 @@ namespace MyTestForm.Forms
         /// </summary>
         private void RefreshData()
         {
-            this.dataGridView.DataSource = ConsumerDao.SelectAll();
-            
+            var consumers = consumerDao.SelectAll();
+            var dataSource = changeGender(consumers);
+            this.dataGridView.DataSource = dataSource;
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace MyTestForm.Forms
                 string consumer_id = dataGridView.Rows[index].Cells["consumer_id"].Value.ToString();
                 if (MessageBox.Show("是否删除", "删除提示",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK
-                    && ConsumerDao.Delete(new { consumer_id = consumer_id }) )
+                    && consumerDao.Delete(new { consumer_id = consumer_id }) )
                 {
                     MessageBox.Show("删除成功");
                 }
@@ -105,7 +106,31 @@ namespace MyTestForm.Forms
         /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            this.dataGridView.DataSource = ConsumerDao.SelectLike(new {consumer_name = this.SearchTextBox.Text });
+            var consumers = consumerDao.SelectLike(new {consumer_name = this.SearchTextBox.Text });
+            var dataSource = changeGender(consumers);
+            this.dataGridView.DataSource = dataSource;
+        }
+
+        /// <summary>
+        /// 把性别变成字符串
+        /// </summary>
+        /// <param name="consumers"></param>
+        /// <returns></returns>
+        private IList changeGender(IList<Consumer> consumers)
+        {
+            var dataSource = new List<Object>();
+            foreach (Consumer consumer in consumers)
+            {
+                string gender = consumer.gender == 0 ? "女" : "男";
+                dataSource.Add(new
+                {
+                    consumer_id = consumer.consumer_id,
+                    consumer_name = consumer.consumer_name,
+                    phone_number = consumer.phone_number,
+                    gender = gender
+                });
+            }
+            return dataSource;
         }
     }
 }

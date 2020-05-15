@@ -13,7 +13,7 @@ namespace MyTestForm.domain
 
         public string employee_name { get; set; }
 
-        public bool gender { get; set; }
+        public int gender { get; set; }
 
         public string titel_name { get; set; }
 

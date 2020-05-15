@@ -165,7 +165,6 @@
             this.Controls.Add(this.panelMain);
             this.Name = "ConsumerEdit";
             this.Text = "ConsumerEdit";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsumerEdit_FormClosed);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

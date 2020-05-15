@@ -42,5 +42,11 @@ namespace MyTestForm.Forms
         {
             Application.Exit();
         }
+
+        private void EmplyeeButton_Click(object sender, EventArgs e)
+        {
+            EmployeeList employeeList = new EmployeeList();
+            employeeList.ShowDialog();
+        }
     }
 }

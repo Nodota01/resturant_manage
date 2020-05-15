@@ -58,6 +58,7 @@
             this.EmplyeeButton.TabIndex = 1;
             this.EmplyeeButton.Text = "雇员管理";
             this.EmplyeeButton.UseVisualStyleBackColor = false;
+            this.EmplyeeButton.Click += new System.EventHandler(this.EmplyeeButton_Click);
             // 
             // DeskButton
             // 

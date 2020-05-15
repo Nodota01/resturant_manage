@@ -23,7 +23,7 @@ namespace MyTestForm.dao
         }
 
         /// <summary>
-        /// 查询全部未删除的数据
+        /// 查询全部数据
         /// </summary>
         /// <returns>查询结果</returns>
         public IList<Employee> SelectAll()
@@ -89,7 +89,7 @@ namespace MyTestForm.dao
         public bool Delete(dynamic condition)
         {
             string SQL = SQLBuilder.BuildDeleteSQL(condition, TableName);
-            int result = Connection.Execute(SQL, (object)condition);
+            int result = Connection.ExecuteSql(SQL, (object)condition);
             return result == 1 ? true : false;
         }
 
