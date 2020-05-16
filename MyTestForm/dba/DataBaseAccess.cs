@@ -13,7 +13,7 @@ namespace ConsoleApp1.dba
         private const string PORT = "3306";
         private const string DATABASE = "restaurant";
         private const string USER = "root";
-        private const string PASSWORD = "AAA200010199";
+        private const string PASSWORD = "root";
         private const bool POOLING = true;
         private static readonly MySqlConnection mySqlConnection;
 

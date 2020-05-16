@@ -40,6 +40,16 @@ namespace MyTestForm.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //判空
+            foreach (Control control in this.panelMain.Controls)
+            {
+                TextBox textBox = control as TextBox;
+                if (textBox != null && textBox.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("所有字段不能为空");
+                    return;
+                }
+            }
             //根据是否存有对象判别新增还是修改
             if (desk == null)
             {

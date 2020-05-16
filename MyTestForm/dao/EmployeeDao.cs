@@ -105,6 +105,7 @@ namespace MyTestForm.dao
                 employee_id = employee.employee_id,
                 employee_name = employee.employee_name,
                 gender = employee.gender,
+                titel_name = employee.titel_name,
                 wage = employee.wage,
                 password = employee.password
             };

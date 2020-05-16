@@ -61,6 +61,10 @@ namespace MyTestForm.Forms
 
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("请输入数字");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
