@@ -15,9 +15,11 @@ namespace MyTestForm.Forms
         public MenuForm(string title)
         {
             InitializeComponent();
+            //雇员无法查看的内容
             if(title == "雇员")
             {
                 EmplyeeButton.Enabled = false;
+                BillButton.Enabled = false;
             }
         }
 
@@ -47,6 +49,18 @@ namespace MyTestForm.Forms
         {
             EmployeeList employeeList = new EmployeeList();
             employeeList.ShowDialog();
+        }
+
+        private void BillButton_Click(object sender, EventArgs e)
+        {
+            BillList billList = new BillList();
+            billList.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MeterialList meterialList = new MeterialList();
+            meterialList.ShowDialog();
         }
     }
 }

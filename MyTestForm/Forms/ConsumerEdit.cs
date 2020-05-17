@@ -16,15 +16,15 @@ namespace MyTestForm.Forms
     {
         private ConsumerDao consumerDao = new ConsumerDao();
         private Consumer consumer;
-        private string entityID;
+        private string consumer_id;
 
         //编辑
         public ConsumerEdit(string id)
         {
             InitializeComponent();
             //如果传入ID则查出来并放入控件
-            entityID = id;
-            consumer = consumerDao.Select(new { consumer_id = entityID })[0];
+            consumer_id = id;
+            consumer = consumerDao.Select(new { consumer_id = consumer_id })[0];
             this.Text = "正在编辑 - " + consumer.consumer_name;
             Util.Binding.BindObjectToForm(this, consumer, typeof(Consumer));
         }

@@ -22,14 +22,14 @@ namespace MyTestForm.Forms
         {
             InitializeComponent();
             consumerDao = new ConsumerDao();
-            RefreshData();
+            DataRefresh();
             
         }
 
         /// <summary>
         /// 刷新数据
         /// </summary>
-        private void RefreshData()
+        private void DataRefresh()
         {
             var consumers = consumerDao.SelectAll();
             var dataSource = changeGender(consumers);
@@ -60,7 +60,7 @@ namespace MyTestForm.Forms
                     MessageBox.Show("删除失败");
                 }
             }
-            RefreshData();
+            DataRefresh();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -70,14 +70,14 @@ namespace MyTestForm.Forms
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            this.RefreshData();
+            this.DataRefresh();
         }
 
         private void InsertButton_Click(object sender, EventArgs e)
         {
             ConsumerEdit consumerEdit = new ConsumerEdit();
             consumerEdit.ShowDialog();
-            this.RefreshData();
+            this.DataRefresh();
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace MyTestForm.Forms
                 ConsumerEdit consumerEdit = new ConsumerEdit(consumer_id);
                 //退出编辑后刷新数据
                 consumerEdit.ShowDialog();
-                this.RefreshData();
+                this.DataRefresh();
             }
             else
             {
