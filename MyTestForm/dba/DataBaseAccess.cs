@@ -9,11 +9,11 @@ namespace ConsoleApp1.dba
 {
     class DataBaseAccess
     {
-        private const string SERVER = "localhost";
+        private const string SERVER = "106.15.207.39";
         private const string PORT = "3306";
         private const string DATABASE = "restaurant";
-        private const string USER = "root";
-        private const string PASSWORD = "root";
+        private const string USER = "user02";
+        private const string PASSWORD = "user02";
         private const bool POOLING = true;
         private static readonly MySqlConnection mySqlConnection;
 

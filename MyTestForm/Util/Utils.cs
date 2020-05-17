@@ -15,7 +15,7 @@ namespace MyTestForm.Util
         /// <returns>guid</returns>
         public static string GetGuid()
         {
-            return Guid.NewGuid().ToString().Substring(0, 9);
+            return Guid.NewGuid().ToString().Substring(0, 10).Replace("-", "");
         }
     }
 }

@@ -30,9 +30,6 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.desk_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desk_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InsertButton = new System.Windows.Forms.ToolStripButton();
             this.UpdateButton = new System.Windows.Forms.ToolStripButton();
             this.DeleteButton = new System.Windows.Forms.ToolStripButton();
@@ -41,6 +38,9 @@
             this.OrderButton = new System.Windows.Forms.ToolStripButton();
             this.NewRecordButton = new System.Windows.Forms.ToolStripButton();
             this.LeaveDeskButton = new System.Windows.Forms.ToolStripButton();
+            this.desk_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desk_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -81,28 +81,6 @@
             this.dataGridView.RowTemplate.Height = 23;
             this.dataGridView.Size = new System.Drawing.Size(776, 410);
             this.dataGridView.TabIndex = 3;
-            // 
-            // desk_id
-            // 
-            this.desk_id.DataPropertyName = "desk_id";
-            this.desk_id.HeaderText = "desk_id";
-            this.desk_id.Name = "desk_id";
-            this.desk_id.ReadOnly = true;
-            this.desk_id.Visible = false;
-            // 
-            // desk_name
-            // 
-            this.desk_name.DataPropertyName = "desk_name";
-            this.desk_name.HeaderText = "桌名";
-            this.desk_name.Name = "desk_name";
-            this.desk_name.ReadOnly = true;
-            // 
-            // is_available
-            // 
-            this.is_available.DataPropertyName = "is_available";
-            this.is_available.HeaderText = "是否占用";
-            this.is_available.Name = "is_available";
-            this.is_available.ReadOnly = true;
             // 
             // InsertButton
             // 
@@ -168,12 +146,34 @@
             // 
             // LeaveDeskButton
             // 
-            this.LeaveDeskButton.Image = global::MyTestForm.Properties.Resources.Delete;
+            this.LeaveDeskButton.Image = global::MyTestForm.Properties.Resources.DeskLeave;
             this.LeaveDeskButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LeaveDeskButton.Name = "LeaveDeskButton";
             this.LeaveDeskButton.Size = new System.Drawing.Size(52, 22);
             this.LeaveDeskButton.Text = "离座";
             this.LeaveDeskButton.Click += new System.EventHandler(this.LeaveDeskButton_Click);
+            // 
+            // desk_id
+            // 
+            this.desk_id.DataPropertyName = "desk_id";
+            this.desk_id.HeaderText = "desk_id";
+            this.desk_id.Name = "desk_id";
+            this.desk_id.ReadOnly = true;
+            this.desk_id.Visible = false;
+            // 
+            // desk_name
+            // 
+            this.desk_name.DataPropertyName = "desk_name";
+            this.desk_name.HeaderText = "桌名";
+            this.desk_name.Name = "desk_name";
+            this.desk_name.ReadOnly = true;
+            // 
+            // is_available
+            // 
+            this.is_available.DataPropertyName = "is_available";
+            this.is_available.HeaderText = "是否可用";
+            this.is_available.Name = "is_available";
+            this.is_available.ReadOnly = true;
             // 
             // DeskList
             // 
@@ -201,11 +201,11 @@
         private System.Windows.Forms.ToolStripButton ExitButton;
         private System.Windows.Forms.ToolStripButton RefreshButton;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desk_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desk_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn is_available;
         private System.Windows.Forms.ToolStripButton OrderButton;
         private System.Windows.Forms.ToolStripButton NewRecordButton;
         private System.Windows.Forms.ToolStripButton LeaveDeskButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desk_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desk_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn is_available;
     }
 }
