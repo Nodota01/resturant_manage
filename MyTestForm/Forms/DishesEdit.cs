@@ -12,38 +12,36 @@ using System.Windows.Forms;
 
 namespace MyTestForm.Forms
 {
-    public partial class ConsumerEdit : Form
+    public partial class DishesEdit : Form
     {
 
-        private ConsumerDao consumerDao = new ConsumerDao();
-        private Consumer consumer;
-        private string consumer_id;
+        private DishesDao dishesDao = new DishesDao();
+        private Dishes dishes;
+        private string dishes_id;
 
         //编辑
-        public ConsumerEdit(string id)
+        public DishesEdit(string id)
         {
             InitializeComponent();
             //如果传入ID则查出来并放入控件
-            consumer_id = id;
-            consumer = consumerDao.Select(new { consumer_id = consumer_id })[0];
-            this.Text = "正在编辑 - " + consumer.consumer_name;
-            Util.Binding.BindObjectToForm(this, consumer, typeof(Consumer));
+            dishes_id = id;
+            dishes = dishesDao.Select(new { dishes_id = dishes_id })[0];
+            this.Text = "正在编辑 - " + dishes.dishes_name;
+            Util.Binding.BindObjectToForm(this, dishes, typeof(Dishes));
         }
 
         //新增
-        public ConsumerEdit()
+        public DishesEdit()
         {
             InitializeComponent();
-            consumer = null;
+            dishes = null;
             this.Text = "新增";
-            //设置性别默认值
-            gender.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             //判空
-            foreach(Control control in this.panelMain.Controls)
+            foreach (Control control in this.panelMain.Controls)
             {
                 TextBox textBox = control as TextBox;
                 if (textBox != null && textBox.Text.Trim().Length == 0)
@@ -53,13 +51,13 @@ namespace MyTestForm.Forms
                 }
             }
             //根据是否存有对象判别新增还是修改
-            if (consumer == null)
+            if (dishes == null)
             {
-                consumer = new Consumer();
-                if (Util.Binding.BindFormToObject(this, consumer, typeof(Consumer)) && consumerDao.Insert(consumer))
+                dishes = new Dishes();
+                if (Util.Binding.BindFormToObject(this, dishes, typeof(Dishes)) && dishesDao.Insert(dishes))
                 {
                     MessageBox.Show("添加成功");
-                    this.Text = "正在编辑 - " + consumer.consumer_name;
+                    this.Text = "正在编辑 - " + dishes.dishes_name;
                 }
                 else
                 {
@@ -69,10 +67,10 @@ namespace MyTestForm.Forms
             //更新
             else
             {
-                if ((Util.Binding.BindFormToObject(this, consumer, typeof(Consumer)) && consumerDao.Update(consumer)))
+                if ((Util.Binding.BindFormToObject(this, dishes, typeof(Dishes)) && dishesDao.Update(dishes)))
                 {
                     MessageBox.Show("更新成功");
-                    this.Text = "正在编辑 - " + consumer.consumer_name;
+                    this.Text = "正在编辑 - " + dishes.dishes_name;
                 }
                 else
                 {
@@ -86,23 +84,16 @@ namespace MyTestForm.Forms
             this.Close();
         }
 
-        /// <summary>
-        /// 清空textbox
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            foreach(Control control in panelMain.Controls)
+            foreach (Control control in panelMain.Controls)
             {
                 TextBox textBox = control as TextBox;
-                if(textBox != null)
+                if (textBox != null)
                 {
                     textBox.Text = "";
                 }
             }
         }
-
-        
     }
 }

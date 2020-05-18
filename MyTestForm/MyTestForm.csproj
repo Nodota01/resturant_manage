@@ -99,14 +99,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dao\BillDao.cs" />
+    <Compile Include="dao\ConsumeDao.cs" />
     <Compile Include="dao\ConsumerDao.cs" />
     <Compile Include="dao\DeskDao.cs" />
-    <Compile Include="dao\DishedConsumeDao.cs" />
     <Compile Include="dao\DishesDao.cs" />
     <Compile Include="dao\EmployeeDao.cs" />
     <Compile Include="dao\MeterialDao.cs" />
     <Compile Include="dao\OrderDao.cs" />
     <Compile Include="domain\Bill.cs" />
+    <Compile Include="domain\Consume.cs" />
     <Compile Include="domain\Dishes.cs" />
     <Compile Include="domain\Employee.cs" />
     <Compile Include="dao\VisitRecordDao.cs" />
@@ -123,6 +124,18 @@
     </Compile>
     <Compile Include="Forms\BillList.Designer.cs">
       <DependentUpon>BillList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConsumeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConsumeEdit.Designer.cs">
+      <DependentUpon>ConsumeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConsumeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConsumeList.Designer.cs">
+      <DependentUpon>ConsumeList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ConsumerEdit.cs">
       <SubType>Form</SubType>
@@ -147,6 +160,18 @@
     </Compile>
     <Compile Include="Forms\DeskList.Designer.cs">
       <DependentUpon>DeskList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DishesEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DishesEdit.Designer.cs">
+      <DependentUpon>DishesEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DishesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DishesList.Designer.cs">
+      <DependentUpon>DishesList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeEdit.cs">
       <SubType>Form</SubType>
@@ -203,6 +228,12 @@
     <EmbeddedResource Include="Forms\BillList.resx">
       <DependentUpon>BillList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConsumeEdit.resx">
+      <DependentUpon>ConsumeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConsumeList.resx">
+      <DependentUpon>ConsumeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ConsumerEdit.resx">
       <DependentUpon>ConsumerEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeskList.resx">
       <DependentUpon>DeskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DishesEdit.resx">
+      <DependentUpon>DishesEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DishesList.resx">
+      <DependentUpon>DishesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeEdit.resx">
       <DependentUpon>EmployeeEdit.cs</DependentUpon>

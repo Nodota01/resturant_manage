@@ -8,12 +8,12 @@ using MyTestForm.Util;
 
 namespace MyTestForm.dao
 {
-    class DishedConsumeDao
+    class ConsumeDao
     {
         private static MySqlConnection Connection;
         private string TableName = "dishes_consume";
 
-        public DishedConsumeDao()
+        public ConsumeDao()
         {
             //获取连接
             Connection = DataBaseAccess.GetConnection();
@@ -24,11 +24,23 @@ namespace MyTestForm.dao
         /// </summary>
         /// <param name="dishes_id">给定菜品id</param>
         /// <returns>材料id列表</returns>
-        public IList<string> GetConsumeMeterials(string dishes_id)
+        public IList<Consume> GetConsumeMeterials(string dishes_id)
         {
             var con = new { dishes_id = dishes_id };
-            var meterials = Connection.QuerySql<string>("STLECT meterial_id FROM dishes_consume WHERE dishes_id=@dishes_id ",
-                (Object)con);
+            string SQL = SQLBuilder.BuildSelectSQL(con,TableName);
+            var meterials = Connection.QuerySql<Consume>(SQL,(Object)con);
+            return meterials;
+        }
+
+        /// <summary>
+        /// 条件查询
+        /// </summary>
+        /// <param name="condition">查询结果集</param>
+        /// <returns></returns>
+        public IList<Consume> Select(dynamic condition)
+        {
+            string SQL = SQLBuilder.BuildSelectSQL(condition, TableName);
+            var meterials = Connection.QuerySql<Consume>(SQL, (Object)condition);
             return meterials;
         }
 
@@ -40,7 +52,7 @@ namespace MyTestForm.dao
         public bool Delete(dynamic condition)
         {
             string SQL = SQLBuilder.BuildDeleteSQL(condition, TableName);
-            int result = Connection.ExecuteSql(SQL);
+            int result = Connection.ExecuteSql(SQL, (Object)condition);
             return result == 1 ? true : false;
         }
 
@@ -48,15 +60,10 @@ namespace MyTestForm.dao
         /// 添加
         /// </summary>
         /// <returns>添加是否成功</returns>
-        public bool Insert(string dishes_id, string meterial_id)
+        public bool Insert(Consume consume)
         {
-            var pare = new
-            {
-                dishes_id = dishes_id,
-                meterial_id = meterial_id
-            };
-            string SQL = SQLBuilder.BuildInsertSQL(pare, TableName);
-            int result = Connection.ExecuteSql(SQL, pare);
+            string SQL = SQLBuilder.BuildInsertSQL(consume, TableName);
+            int result = Connection.ExecuteSql(SQL, consume);
             return result == 1 ? true : false;
         }
 
@@ -64,15 +71,10 @@ namespace MyTestForm.dao
         /// 更新
         /// </summary>
         /// <returns>更新是否成功</returns>
-        public bool Update(string dishes_id, string meterial_id)
+        public bool Update(Consume consume)
         {
-            var pare = new
-            {
-                dishes_id = dishes_id,
-                meterial_id = meterial_id
-            };
-            string SQL = SQLBuilder.BuildUpdateSQL(pare, new { dishes_id = dishes_id }, TableName);
-            int result = Connection.ExecuteSql(SQL, pare);
+            string SQL = SQLBuilder.BuildUpdateSQL(consume, new { dishes_id = consume.dishes_id }, TableName);
+            int result = Connection.ExecuteSql(SQL, consume);
             return result == 1 ? true : false;
         }
     }

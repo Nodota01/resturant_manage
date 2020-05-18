@@ -102,7 +102,6 @@ namespace MyTestForm.Forms
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK
                     && employeeDao.Delete(new { employee_id = employee_id }))
                 {
-                    MessageBox.Show("删除成功");
                 }
                 else
                 {

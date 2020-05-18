@@ -34,6 +34,7 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.BillButton = new System.Windows.Forms.Button();
             this.MeterialButton = new System.Windows.Forms.Button();
+            this.DishesManageButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ConsumerButton
@@ -114,12 +115,26 @@
             this.MeterialButton.UseVisualStyleBackColor = false;
             this.MeterialButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // DishesManageButton
+            // 
+            this.DishesManageButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.DishesManageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DishesManageButton.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DishesManageButton.Location = new System.Drawing.Point(431, 262);
+            this.DishesManageButton.Name = "DishesManageButton";
+            this.DishesManageButton.Size = new System.Drawing.Size(121, 105);
+            this.DishesManageButton.TabIndex = 6;
+            this.DishesManageButton.Text = "菜单管理";
+            this.DishesManageButton.UseVisualStyleBackColor = false;
+            this.DishesManageButton.Click += new System.EventHandler(this.DishesManageButton_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DishesManageButton);
             this.Controls.Add(this.MeterialButton);
             this.Controls.Add(this.BillButton);
             this.Controls.Add(this.ExitButton);
@@ -127,7 +142,7 @@
             this.Controls.Add(this.EmplyeeButton);
             this.Controls.Add(this.ConsumerButton);
             this.Name = "MenuForm";
-            this.Text = "MenuForm";
+            this.Text = "主菜单";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuForm_FormClosed);
             this.ResumeLayout(false);
 
@@ -141,5 +156,6 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button BillButton;
         private System.Windows.Forms.Button MeterialButton;
+        private System.Windows.Forms.Button DishesManageButton;
     }
 }

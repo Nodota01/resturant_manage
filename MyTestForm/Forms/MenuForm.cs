@@ -62,5 +62,11 @@ namespace MyTestForm.Forms
             MeterialList meterialList = new MeterialList();
             meterialList.ShowDialog();
         }
+
+        private void DishesManageButton_Click(object sender, EventArgs e)
+        {
+            DishesList dishesList = new DishesList();
+            dishesList.ShowDialog();
+        }
     }
 }

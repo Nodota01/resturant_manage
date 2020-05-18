@@ -53,7 +53,6 @@ namespace MyTestForm.Forms
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK
                     && consumerDao.Delete(new { consumer_id = consumer_id }) )
                 {
-                    MessageBox.Show("删除成功");
                 }
                 else
                 {
@@ -63,16 +62,11 @@ namespace MyTestForm.Forms
             DataRefresh();
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void RefreshButton_Click(object sender, EventArgs e)
-        {
-            this.DataRefresh();
-        }
-
+        /// <summary>
+        /// 添加按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InsertButton_Click(object sender, EventArgs e)
         {
             ConsumerEdit consumerEdit = new ConsumerEdit();
@@ -80,6 +74,11 @@ namespace MyTestForm.Forms
             this.DataRefresh();
         }
 
+        /// <summary>
+        /// 更新按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             //获取id后进入edit
@@ -131,6 +130,16 @@ namespace MyTestForm.Forms
                 });
             }
             return dataSource;
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            this.DataRefresh();
         }
     }
 }

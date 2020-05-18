@@ -1,6 +1,6 @@
 ﻿namespace MyTestForm.Forms
 {
-    partial class BillList
+    partial class ConsumeList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.InsertButton = new System.Windows.Forms.ToolStripButton();
+            this.DeleteButton = new System.Windows.Forms.ToolStripButton();
             this.ExitButton = new System.Windows.Forms.ToolStripButton();
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bill_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.create_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meterial_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meterial_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consume_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +44,8 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.InsertButton,
+            this.DeleteButton,
             this.ExitButton,
             this.RefreshButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -52,6 +53,24 @@
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // InsertButton
+            // 
+            this.InsertButton.Image = global::MyTestForm.Properties.Resources.Insert;
+            this.InsertButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.InsertButton.Name = "InsertButton";
+            this.InsertButton.Size = new System.Drawing.Size(52, 22);
+            this.InsertButton.Text = "添加";
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Image = global::MyTestForm.Properties.Resources.Delete;
+            this.DeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(52, 22);
+            this.DeleteButton.Text = "删除";
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // ExitButton
             // 
@@ -69,6 +88,7 @@
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(52, 22);
             this.RefreshButton.Text = "刷新";
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // dataGridView
             // 
@@ -79,72 +99,48 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.type,
-            this.bill_id,
-            this.type_name,
-            this.type_id,
-            this.cost,
-            this.create_date});
+            this.meterial_id,
+            this.meterial_name,
+            this.consume_num});
             this.dataGridView.Location = new System.Drawing.Point(12, 28);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 23;
-            this.dataGridView.Size = new System.Drawing.Size(776, 410);
+            this.dataGridView.Size = new System.Drawing.Size(776, 402);
             this.dataGridView.TabIndex = 3;
             // 
-            // type
+            // meterial_id
             // 
-            this.type.DataPropertyName = "type";
-            this.type.HeaderText = "类型";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
+            this.meterial_id.DataPropertyName = "meterial_id";
+            this.meterial_id.HeaderText = "meterial_id";
+            this.meterial_id.Name = "meterial_id";
+            this.meterial_id.ReadOnly = true;
+            this.meterial_id.Visible = false;
             // 
-            // bill_id
+            // meterial_name
             // 
-            this.bill_id.DataPropertyName = "bill_id";
-            this.bill_id.HeaderText = "bill_id";
-            this.bill_id.Name = "bill_id";
-            this.bill_id.ReadOnly = true;
-            this.bill_id.Visible = false;
+            this.meterial_name.DataPropertyName = "meterial_name";
+            this.meterial_name.HeaderText = "食材名称";
+            this.meterial_name.Name = "meterial_name";
+            this.meterial_name.ReadOnly = true;
             // 
-            // type_name
+            // consume_num
             // 
-            this.type_name.DataPropertyName = "type_name";
-            this.type_name.HeaderText = "名称";
-            this.type_name.Name = "type_name";
-            this.type_name.ReadOnly = true;
+            this.consume_num.DataPropertyName = "consume_num";
+            this.consume_num.HeaderText = "消耗量";
+            this.consume_num.Name = "consume_num";
+            this.consume_num.ReadOnly = true;
             // 
-            // type_id
-            // 
-            this.type_id.DataPropertyName = "type_id";
-            this.type_id.HeaderText = "记录id";
-            this.type_id.Name = "type_id";
-            this.type_id.ReadOnly = true;
-            // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "cost";
-            this.cost.HeaderText = "花费";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
-            // 
-            // create_date
-            // 
-            this.create_date.DataPropertyName = "create_date";
-            this.create_date.HeaderText = "创建日期";
-            this.create_date.Name = "create_date";
-            this.create_date.ReadOnly = true;
-            // 
-            // BillList
+            // ConsumeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "BillList";
-            this.Text = "流水";
+            this.Name = "ConsumeList";
+            this.Text = "菜品消耗列表";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -154,15 +150,15 @@
         }
 
         #endregion
+
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton InsertButton;
+        private System.Windows.Forms.ToolStripButton DeleteButton;
         private System.Windows.Forms.ToolStripButton ExitButton;
         private System.Windows.Forms.ToolStripButton RefreshButton;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bill_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn create_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meterial_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meterial_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn consume_num;
     }
 }

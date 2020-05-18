@@ -11,30 +11,37 @@ using System.Windows.Forms;
 
 namespace MyTestForm.Forms
 {
-    public partial class MeterialList : Form
+    public partial class DishesList : Form
     {
+        private DishesDao dishesDao;
 
-        MeterialDao meterialDao = new MeterialDao();
-
-        public MeterialList()
+        public DishesList()
         {
             InitializeComponent();
+            dishesDao = new DishesDao();
             DataRefresh();
+
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void RefreshButton_Click(object sender, EventArgs e)
-        {
-            DataRefresh();
-        }
-
+        /// <summary>
+        /// 刷新数据
+        /// </summary>
         private void DataRefresh()
         {
-            this.dataGridView.DataSource = meterialDao.SelectAll();
+            var dishess = dishesDao.SelectAll();
+            this.dataGridView.DataSource = dishess;
+        }
+
+        /// <summary>
+        /// 添加按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void InsertButton_Click(object sender, EventArgs e)
+        {
+            DishesEdit dishesEdit = new DishesEdit();
+            dishesEdit.ShowDialog();
+            this.DataRefresh();
         }
 
         /// <summary>
@@ -49,10 +56,10 @@ namespace MyTestForm.Forms
             {
                 int index = index = dataGridView.CurrentRow.Index;
                 //获取选中行的id(被隐藏)
-                string meterial_id = dataGridView.Rows[index].Cells["meterial_id"].Value.ToString();
+                string dishes_id = dataGridView.Rows[index].Cells["dishes_id"].Value.ToString();
                 if (MessageBox.Show("是否删除", "删除提示",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK
-                    && meterialDao.Delete(new { meterial_id = meterial_id }))
+                    && dishesDao.Delete(new { dishes_id = dishes_id }))
                 {
                 }
                 else
@@ -63,46 +70,45 @@ namespace MyTestForm.Forms
             DataRefresh();
         }
 
-        private void InsertButton_Click(object sender, EventArgs e)
-        {
-            MeterialEdit meterialEdit = new MeterialEdit();
-            meterialEdit.ShowDialog();
-            this.DataRefresh();
-        }
-
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             //获取id后进入edit
             if (dataGridView.CurrentRow != null)
             {
                 int index = dataGridView.CurrentRow.Index;
-                string meterial_id = dataGridView.Rows[index].Cells["meterial_id"].Value.ToString();
-                MeterialEdit meterialEdit = new MeterialEdit(meterial_id);
+                string dishes_id = dataGridView.Rows[index].Cells["dishes_id"].Value.ToString();
+                DishesEdit dishesEdit = new DishesEdit(dishes_id);
                 //退出编辑后刷新数据
-                meterialEdit.ShowDialog();
+                dishesEdit.ShowDialog();
                 this.DataRefresh();
             }
             else
             {
                 MessageBox.Show("尚未选择数据");
             }
+
         }
 
-        /// <summary>
-        /// 进货，打开进货窗口
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddStorageButton_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            this.DataRefresh();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             //获取选中行
             if (dataGridView.CurrentRow != null)
             {
                 int index = index = dataGridView.CurrentRow.Index;
                 //获取选中行的id(被隐藏)
-                string meterial_id = dataGridView.Rows[index].Cells["meterial_id"].Value.ToString();
-                MeterialAddStorage meterialAdd = new MeterialAddStorage(meterial_id);
-                meterialAdd.ShowDialog();
+                string dishes_id = dataGridView.Rows[index].Cells["dishes_id"].Value.ToString();
+                ConsumeList consumeList = new ConsumeList(dishes_id);
+                consumeList.ShowDialog();
             }
             DataRefresh();
         }
