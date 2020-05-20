@@ -11,7 +11,7 @@ namespace MyTestForm.domain
     {
         public string order_id { get; set; }
 
-        public string visit_id { get; set; }
+        public string visit_record_id { get; set; }
 
         public string dishes_id { get; set; }
 
@@ -20,6 +20,7 @@ namespace MyTestForm.domain
         public Order()
         {
             this.order_id = Utils.GetGuid();
+            this.order_date = DateTime.Now;
         }
 
     }

@@ -14,7 +14,7 @@ namespace MyTestForm.dao
     class OrderDao
     {
         private static MySqlConnection Connection;
-        private string TableName = "order";
+        private string TableName = "order_list";
 
         public OrderDao()
         {

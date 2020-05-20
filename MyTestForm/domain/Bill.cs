@@ -24,6 +24,7 @@ namespace MyTestForm.domain
         public Bill()
         {
             this.bill_id = Utils.GetGuid();
+            this.create_date = DateTime.Now;
         }
     }
 }

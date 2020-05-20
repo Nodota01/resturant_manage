@@ -61,7 +61,7 @@ namespace MyTestForm.Forms
                     return;
                 }
                 consumeDao.Insert(consume);
-                MessageBox.Show("添加成功");
+                this.Close();
             }
             else
             {

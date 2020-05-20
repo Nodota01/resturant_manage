@@ -78,16 +78,8 @@ namespace MyTestForm.dao
         /// <returns>添加是否成功</returns>
         public bool Insert(Bill bill)
         {
-            var bi = new
-            {
-                bill_id = bill.bill_id,
-                cost = bill.cost,
-                type = bill.type,
-                type_name = bill.type_name,
-                type_id = bill.type_id
-            };
-            string SQL = SQLBuilder.BuildInsertSQL(bi, TableName);
-            int result = Connection.ExecuteSql(SQL, (Object)bi);
+            string SQL = SQLBuilder.BuildInsertSQL(bill, TableName);
+            int result = Connection.ExecuteSql(SQL, bill);
             return result == 1 ? true : false;
         }
 
