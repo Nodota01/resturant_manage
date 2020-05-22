@@ -37,6 +37,7 @@
             this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dishes_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalLabel = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +108,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 23;
-            this.dataGridView.Size = new System.Drawing.Size(776, 402);
+            this.dataGridView.Size = new System.Drawing.Size(776, 370);
             this.dataGridView.TabIndex = 3;
             // 
             // order_id
@@ -132,15 +133,26 @@
             this.order_date.Name = "order_date";
             this.order_date.ReadOnly = true;
             // 
+            // TotalLabel
+            // 
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TotalLabel.Location = new System.Drawing.Point(12, 410);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(82, 31);
+            this.TotalLabel.TabIndex = 4;
+            this.TotalLabel.Text = "label1";
+            // 
             // OrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TotalLabel);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "OrderList";
-            this.Text = "OrderList";
+            this.Text = "点餐";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -160,5 +172,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn order_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dishes_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_date;
+        private System.Windows.Forms.Label TotalLabel;
     }
 }

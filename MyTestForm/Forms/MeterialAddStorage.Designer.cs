@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ConfirmButton = new System.Windows.Forms.ToolStripButton();
+            this.ClearButton = new System.Windows.Forms.ToolStripButton();
             this.ExitButton = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.AddNumBox = new System.Windows.Forms.TextBox();
-            this.ClearButton = new System.Windows.Forms.ToolStripButton();
-            this.ConfirmButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,24 @@
             this.toolStrip1.Size = new System.Drawing.Size(375, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // ConfirmButton
+            // 
+            this.ConfirmButton.Image = global::MyTestForm.Properties.Resources.Insert;
+            this.ConfirmButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(52, 22);
+            this.ConfirmButton.Text = "确定";
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Image = global::MyTestForm.Properties.Resources.Delete;
+            this.ClearButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(52, 22);
+            this.ClearButton.Text = "清空";
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // ExitButton
             // 
@@ -70,28 +88,11 @@
             // 
             // AddNumBox
             // 
+            this.AddNumBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AddNumBox.Location = new System.Drawing.Point(159, 89);
             this.AddNumBox.Name = "AddNumBox";
             this.AddNumBox.Size = new System.Drawing.Size(100, 21);
             this.AddNumBox.TabIndex = 4;
-            // 
-            // ClearButton
-            // 
-            this.ClearButton.Image = global::MyTestForm.Properties.Resources.Delete;
-            this.ClearButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(52, 22);
-            this.ClearButton.Text = "清空";
-            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
-            // 
-            // ConfirmButton
-            // 
-            this.ConfirmButton.Image = global::MyTestForm.Properties.Resources.Insert;
-            this.ConfirmButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(52, 22);
-            this.ConfirmButton.Text = "确定";
-            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // MeterialAddStorage
             // 

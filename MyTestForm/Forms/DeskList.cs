@@ -93,6 +93,7 @@ namespace MyTestForm.Forms
                 //添加点单收入
                 Bill bill = new Bill();
                 string visit_record_id = (string)dataGridView.Rows[index].Cells["current_record"].Value;
+                string desk_name = (string)dataGridView.Rows[index].Cells["desk_name"].Value;
                 var orders = orderDao.Select(new { visit_record_id = visit_record_id });
                 bill.cost = 0;
                 foreach (Order order in orders)
@@ -101,7 +102,7 @@ namespace MyTestForm.Forms
                     bill.cost += dishes.price;
                 }
                 bill.type = "订单";
-                bill.type_name = "菜品";
+                bill.type_name = desk_name;
                 bill.type_id = visit_record_id;
                 billDao.Insert(bill);
 

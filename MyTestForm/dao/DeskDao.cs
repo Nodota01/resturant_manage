@@ -29,9 +29,8 @@ namespace MyTestForm.dao
         /// <returns>查询结果</returns>
         public IList<Desk> SelectAll()
         {
-            var cond = new { is_deleted = false };
-            string SQL = SQLBuilder.BuildSelectSQL(cond , TableName);
-            var records = Connection.QuerySql<Desk>(SQL, cond);
+            string SQL = "SELECT * FROM desk WHERE is_deleted=0 ORDER BY desk_name ASC";
+            var records = Connection.QuerySql<Desk>(SQL);
             return records;
         }
 

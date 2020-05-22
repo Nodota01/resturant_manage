@@ -35,6 +35,7 @@
             this.BillButton = new System.Windows.Forms.Button();
             this.MeterialButton = new System.Windows.Forms.Button();
             this.DishesManageButton = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ConsumerButton
@@ -48,6 +49,7 @@
             this.ConsumerButton.TabIndex = 0;
             this.ConsumerButton.Text = "会员管理";
             this.ConsumerButton.UseVisualStyleBackColor = false;
+            this.ConsumerButton.EnabledChanged += new System.EventHandler(this.DishesManageButton_EnabledChanged);
             this.ConsumerButton.Click += new System.EventHandler(this.ConsumerButton_Click);
             // 
             // EmplyeeButton
@@ -61,6 +63,7 @@
             this.EmplyeeButton.TabIndex = 1;
             this.EmplyeeButton.Text = "雇员管理";
             this.EmplyeeButton.UseVisualStyleBackColor = false;
+            this.EmplyeeButton.EnabledChanged += new System.EventHandler(this.DishesManageButton_EnabledChanged);
             this.EmplyeeButton.Click += new System.EventHandler(this.EmplyeeButton_Click);
             // 
             // DeskButton
@@ -74,6 +77,7 @@
             this.DeskButton.TabIndex = 2;
             this.DeskButton.Text = "餐桌管理";
             this.DeskButton.UseVisualStyleBackColor = false;
+            this.DeskButton.EnabledChanged += new System.EventHandler(this.DishesManageButton_EnabledChanged);
             this.DeskButton.Click += new System.EventHandler(this.DeskButton_Click);
             // 
             // ExitButton
@@ -100,6 +104,7 @@
             this.BillButton.TabIndex = 4;
             this.BillButton.Text = "查看流水";
             this.BillButton.UseVisualStyleBackColor = false;
+            this.BillButton.EnabledChanged += new System.EventHandler(this.DishesManageButton_EnabledChanged);
             this.BillButton.Click += new System.EventHandler(this.BillButton_Click);
             // 
             // MeterialButton
@@ -113,6 +118,7 @@
             this.MeterialButton.TabIndex = 5;
             this.MeterialButton.Text = "食材管理";
             this.MeterialButton.UseVisualStyleBackColor = false;
+            this.MeterialButton.EnabledChanged += new System.EventHandler(this.DishesManageButton_EnabledChanged);
             this.MeterialButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // DishesManageButton
@@ -126,7 +132,21 @@
             this.DishesManageButton.TabIndex = 6;
             this.DishesManageButton.Text = "菜单管理";
             this.DishesManageButton.UseVisualStyleBackColor = false;
+            this.DishesManageButton.EnabledChanged += new System.EventHandler(this.DishesManageButton_EnabledChanged);
             this.DishesManageButton.Click += new System.EventHandler(this.DishesManageButton_Click);
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.BackColor = System.Drawing.SystemColors.Info;
+            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoutButton.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold);
+            this.LogoutButton.Location = new System.Drawing.Point(600, 262);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(121, 105);
+            this.LogoutButton.TabIndex = 7;
+            this.LogoutButton.Text = "注销";
+            this.LogoutButton.UseVisualStyleBackColor = false;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // MenuForm
             // 
@@ -134,6 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.DishesManageButton);
             this.Controls.Add(this.MeterialButton);
             this.Controls.Add(this.BillButton);
@@ -143,7 +164,6 @@
             this.Controls.Add(this.ConsumerButton);
             this.Name = "MenuForm";
             this.Text = "主菜单";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuForm_FormClosed);
             this.ResumeLayout(false);
 
         }
@@ -157,5 +177,6 @@
         private System.Windows.Forms.Button BillButton;
         private System.Windows.Forms.Button MeterialButton;
         private System.Windows.Forms.Button DishesManageButton;
+        private System.Windows.Forms.Button LogoutButton;
     }
 }

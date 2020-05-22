@@ -79,6 +79,7 @@
             // 
             // desk_name
             // 
+            this.desk_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.desk_name.Location = new System.Drawing.Point(181, 112);
             this.desk_name.Name = "desk_name";
             this.desk_name.Size = new System.Drawing.Size(100, 21);

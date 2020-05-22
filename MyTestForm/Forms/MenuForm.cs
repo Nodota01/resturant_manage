@@ -15,11 +15,31 @@ namespace MyTestForm.Forms
         public MenuForm(string title)
         {
             InitializeComponent();
-            //雇员无法查看的内容
-            if(title == "雇员")
+            //服务员无法查看的内容
+            if(title == "服务员")
             {
                 EmplyeeButton.Enabled = false;
                 BillButton.Enabled = false;
+                MeterialButton.Enabled = false;
+                DishesManageButton.Enabled = false;
+            }else if(title == "后厨")
+            {
+                EmplyeeButton.Enabled = false;
+                BillButton.Enabled = false;
+                ConsumerButton.Enabled = false;
+                DeskButton.Enabled = false;
+            }else if(title == "店长")
+            {
+                return;
+            }
+            else
+            {
+                EmplyeeButton.Enabled = false;
+                BillButton.Enabled = false;
+                MeterialButton.Enabled = false;
+                DishesManageButton.Enabled = false;
+                ConsumerButton.Enabled = false;
+                DeskButton.Enabled = false;
             }
         }
 
@@ -35,11 +55,13 @@ namespace MyTestForm.Forms
             deskList.ShowDialog();
         }
 
-        private void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
 
+
+        /// <summary>
+        /// 摁下退出按钮结束程序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -67,6 +89,23 @@ namespace MyTestForm.Forms
         {
             DishesList dishesList = new DishesList();
             dishesList.ShowDialog();
+        }
+
+        /// <summary>
+        /// 被禁用后背景变灰
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DishesManageButton_EnabledChanged(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.Gray;
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

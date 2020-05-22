@@ -33,10 +33,10 @@
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.meterial_name = new System.Windows.Forms.TextBox();
             this.price = new System.Windows.Forms.TextBox();
+            this.meterial_name = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.btnExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(471, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -88,48 +88,50 @@
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Location = new System.Drawing.Point(12, 28);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(776, 410);
+            this.panelMain.Size = new System.Drawing.Size(447, 252);
             this.panelMain.TabIndex = 4;
             // 
-            // label1
+            // price
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F);
-            this.label1.Location = new System.Drawing.Point(289, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "材料名称";
+            this.price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.price.Location = new System.Drawing.Point(195, 164);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(100, 21);
+            this.price.TabIndex = 3;
+            // 
+            // meterial_name
+            // 
+            this.meterial_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.meterial_name.Location = new System.Drawing.Point(195, 87);
+            this.meterial_name.Name = "meterial_name";
+            this.meterial_name.Size = new System.Drawing.Size(100, 21);
+            this.meterial_name.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.Location = new System.Drawing.Point(289, 221);
+            this.label2.Location = new System.Drawing.Point(117, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "材料单价";
             // 
-            // meterial_name
+            // label1
             // 
-            this.meterial_name.Location = new System.Drawing.Point(367, 145);
-            this.meterial_name.Name = "meterial_name";
-            this.meterial_name.Size = new System.Drawing.Size(100, 21);
-            this.meterial_name.TabIndex = 2;
-            // 
-            // price
-            // 
-            this.price.Location = new System.Drawing.Point(367, 222);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(100, 21);
-            this.price.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F);
+            this.label1.Location = new System.Drawing.Point(117, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "材料名称";
             // 
             // MeterialEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(471, 292);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MeterialEdit";

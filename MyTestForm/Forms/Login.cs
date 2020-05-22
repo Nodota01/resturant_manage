@@ -36,8 +36,7 @@ namespace MyTestForm.Forms
             if (employeeDao.IsRight(employee))
             {
                 MenuForm menu = new MenuForm(employee.titel_name);
-                menu.Show();
-                this.Hide();
+                menu.ShowDialog();
             }
             else
             {

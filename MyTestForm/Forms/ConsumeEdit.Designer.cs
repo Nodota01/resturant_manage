@@ -93,6 +93,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(175, 76);
             this.comboBox1.Name = "comboBox1";
@@ -101,6 +102,7 @@
             // 
             // consume_num
             // 
+            this.consume_num.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.consume_num.Location = new System.Drawing.Point(175, 130);
             this.consume_num.Name = "consume_num";
             this.consume_num.Size = new System.Drawing.Size(121, 21);

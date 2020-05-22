@@ -28,7 +28,7 @@ namespace MyTestForm.dao
         /// <returns>查询结果</returns>
         public IList<Bill> SelectAll()
         {
-            string SQL = SQLBuilder.BuildSelectAllSQL(TableName);
+            string SQL = "SELECT * FROM bill ORDER BY create_date ASC";
             var bills = Connection.QuerySql<Bill>(SQL);
             return bills;
         }

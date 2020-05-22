@@ -45,7 +45,7 @@
             this.btnExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(457, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(409, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.Location = new System.Drawing.Point(103, 139);
+            this.label2.Location = new System.Drawing.Point(84, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 5;
@@ -88,7 +88,8 @@
             // 
             // NumTextBox
             // 
-            this.NumTextBox.Location = new System.Drawing.Point(181, 134);
+            this.NumTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NumTextBox.Location = new System.Drawing.Point(162, 104);
             this.NumTextBox.Name = "NumTextBox";
             this.NumTextBox.Size = new System.Drawing.Size(121, 21);
             this.NumTextBox.TabIndex = 6;
@@ -97,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 287);
+            this.ClientSize = new System.Drawing.Size(409, 227);
             this.Controls.Add(this.NumTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);

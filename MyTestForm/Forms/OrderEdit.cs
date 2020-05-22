@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MyTestForm.Forms
 {
-    public partial class OrderEdit : Form
+    public partial class 点餐菜品 : Form
     {
 
         private string visit_record_id;
@@ -25,7 +25,7 @@ namespace MyTestForm.Forms
 
         private MeterialDao meterialDao = new MeterialDao();
 
-        public OrderEdit(string visit_record_id)
+        public 点餐菜品(string visit_record_id)
         {
             InitializeComponent();
             this.visit_record_id = visit_record_id;

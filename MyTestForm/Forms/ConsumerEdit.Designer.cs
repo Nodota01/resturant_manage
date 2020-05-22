@@ -74,7 +74,7 @@
             // 
             this.phone_number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phone_number.Location = new System.Drawing.Point(228, 165);
-            this.phone_number.MaxLength = 45;
+            this.phone_number.MaxLength = 11;
             this.phone_number.Name = "phone_number";
             this.phone_number.Size = new System.Drawing.Size(186, 21);
             this.phone_number.TabIndex = 4;

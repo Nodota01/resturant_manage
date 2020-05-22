@@ -32,6 +32,8 @@ namespace MyTestForm.Forms
         {
             var orderList = orderDao.Select(new { visit_record_id = visit_record_id });
             var dispList = new List<Object>();
+            //总价计数
+            int totalCost = 0;
             //组装显示表
             foreach(Order order in orderList)
             {
@@ -42,8 +44,10 @@ namespace MyTestForm.Forms
                     dishes_name = dishes.dishes_name,
                     order_date = order.order_date
                 });
+                totalCost += dishes.price;
             }
             this.dataGridView.DataSource = dispList;
+            this.TotalLabel.Text = "总计：" + totalCost;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -63,7 +67,7 @@ namespace MyTestForm.Forms
         /// <param name="e"></param>
         private void InsertButton_Click(object sender, EventArgs e)
         {
-            OrderEdit orderEdit = new OrderEdit(visit_record_id);
+            点餐菜品 orderEdit = new 点餐菜品(visit_record_id);
             orderEdit.ShowDialog();
             this.DataRefresh();
         }

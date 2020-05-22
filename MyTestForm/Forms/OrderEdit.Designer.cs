@@ -1,6 +1,6 @@
 ﻿namespace MyTestForm.Forms
 {
-    partial class OrderEdit
+    partial class 点餐菜品
     {
         /// <summary>
         /// Required designer variable.
@@ -78,6 +78,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(167, 82);
             this.comboBox1.Name = "comboBox1";
@@ -94,14 +95,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "食材";
             // 
-            // OrderEdit
+            // 点餐菜品
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 232);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "OrderEdit";
+            this.Name = "点餐菜品";
             this.Text = "OrderEdit";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

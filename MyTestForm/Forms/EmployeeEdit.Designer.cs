@@ -105,6 +105,7 @@
             // 
             // gender
             // 
+            this.gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gender.FormattingEnabled = true;
             this.gender.Items.AddRange(new object[] {
             "女",
@@ -116,6 +117,7 @@
             // 
             // password
             // 
+            this.password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.password.Location = new System.Drawing.Point(342, 306);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(100, 21);
@@ -123,6 +125,7 @@
             // 
             // wage
             // 
+            this.wage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wage.Location = new System.Drawing.Point(342, 248);
             this.wage.Name = "wage";
             this.wage.Size = new System.Drawing.Size(100, 21);
@@ -130,6 +133,7 @@
             // 
             // titel_name
             // 
+            this.titel_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.titel_name.Location = new System.Drawing.Point(342, 190);
             this.titel_name.Name = "titel_name";
             this.titel_name.Size = new System.Drawing.Size(100, 21);
@@ -137,6 +141,7 @@
             // 
             // employee_name
             // 
+            this.employee_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.employee_name.Location = new System.Drawing.Point(342, 74);
             this.employee_name.Name = "employee_name";
             this.employee_name.Size = new System.Drawing.Size(100, 21);

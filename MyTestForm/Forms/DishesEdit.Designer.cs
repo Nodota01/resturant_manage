@@ -33,10 +33,10 @@
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.price = new System.Windows.Forms.TextBox();
+            this.dishes_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dishes_name = new System.Windows.Forms.TextBox();
-            this.price = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,22 @@
             this.panelMain.Size = new System.Drawing.Size(461, 284);
             this.panelMain.TabIndex = 4;
             // 
+            // price
+            // 
+            this.price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.price.Location = new System.Drawing.Point(180, 155);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(110, 21);
+            this.price.TabIndex = 8;
+            // 
+            // dishes_name
+            // 
+            this.dishes_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dishes_name.Location = new System.Drawing.Point(180, 91);
+            this.dishes_name.Name = "dishes_name";
+            this.dishes_name.Size = new System.Drawing.Size(110, 21);
+            this.dishes_name.TabIndex = 7;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -110,20 +126,6 @@
             this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "价格";
-            // 
-            // dishes_name
-            // 
-            this.dishes_name.Location = new System.Drawing.Point(180, 91);
-            this.dishes_name.Name = "dishes_name";
-            this.dishes_name.Size = new System.Drawing.Size(110, 21);
-            this.dishes_name.TabIndex = 7;
-            // 
-            // price
-            // 
-            this.price.Location = new System.Drawing.Point(180, 155);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(110, 21);
-            this.price.TabIndex = 8;
             // 
             // DishesEdit
             // 

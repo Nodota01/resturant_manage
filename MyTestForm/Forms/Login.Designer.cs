@@ -79,6 +79,7 @@
             this.PasswordText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PasswordText.Location = new System.Drawing.Point(335, 256);
             this.PasswordText.Name = "PasswordText";
+            this.PasswordText.PasswordChar = '*';
             this.PasswordText.Size = new System.Drawing.Size(169, 21);
             this.PasswordText.TabIndex = 4;
             this.PasswordText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordText_KeyDown);

@@ -56,8 +56,7 @@ namespace MyTestForm.Forms
                 desk = new Desk();
                 if (Util.Binding.BindFormToObject(this, desk, typeof(Desk)) && deskDao.Insert(desk))
                 {
-                    MessageBox.Show("添加成功");
-                    this.Text = "正在编辑 - " + desk.desk_name;
+                    this.Close();
                 }
                 else
                 {
