@@ -37,6 +37,7 @@
             this.dishes_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.label3);
             this.panelMain.Controls.Add(this.price);
             this.panelMain.Controls.Add(this.dishes_name);
             this.panelMain.Controls.Add(this.label1);
@@ -127,6 +129,16 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "价格";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F);
+            this.label3.Location = new System.Drawing.Point(296, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "元";
+            // 
             // DishesEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -156,5 +168,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox price;
         private System.Windows.Forms.TextBox dishes_name;
+        private System.Windows.Forms.Label label3;
     }
 }

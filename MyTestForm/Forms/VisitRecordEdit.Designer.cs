@@ -34,6 +34,7 @@
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.NumTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,16 +90,27 @@
             // NumTextBox
             // 
             this.NumTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NumTextBox.Location = new System.Drawing.Point(162, 104);
+            this.NumTextBox.Location = new System.Drawing.Point(162, 109);
             this.NumTextBox.Name = "NumTextBox";
             this.NumTextBox.Size = new System.Drawing.Size(121, 21);
             this.NumTextBox.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F);
+            this.label1.Location = new System.Drawing.Point(289, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "人";
             // 
             // VisitRecordEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 227);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.NumTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.ToolStripButton btnExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NumTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

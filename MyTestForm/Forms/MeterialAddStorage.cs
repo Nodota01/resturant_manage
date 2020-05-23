@@ -29,10 +29,10 @@ namespace MyTestForm.Forms
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(AddNumBox.Text.Trim(), @"^\d+\z"))
+            if (Regex.IsMatch(AddNumBox.Text.Trim(), @"^\d+\.\d+\z|^\d+\z"))
             {
                 //更新库存
-                int addNum = Convert.ToInt32(AddNumBox.Text.Trim());
+                decimal addNum = Convert.ToDecimal(AddNumBox.Text.Trim());
                 meterial.storage += addNum;
                 meterialDao.Update(meterial);
                 //记录账单

@@ -46,13 +46,13 @@ namespace MyTestForm.Forms
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(consume_num.Text.Trim(), @"^\d+\z"))
+            if (Regex.IsMatch(consume_num.Text.Trim(), @"^\d+\.\d+\z|^\d+\z"))
             {
                 Consume consume = new Consume
                 {
                     dishes_id = dishes_id,
                     meterial_id = comboBox1.SelectedValue.ToString(),
-                    consume_num = Convert.ToInt32(consume_num.Text)
+                    consume_num = Convert.ToDecimal(consume_num.Text)
                 };
                 //查看是否已存在一对相同的耗材
                 if (consumeDao.Select(new { dishes_id = dishes_id, meterial_id = consume.meterial_id }).Count > 0)

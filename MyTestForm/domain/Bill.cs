@@ -11,7 +11,7 @@ namespace MyTestForm.domain
     {
         public string bill_id { get; set; }
 
-        public int cost { get; set; }
+        public decimal cost { get; set; }
 
         public string type { get; set; }
 

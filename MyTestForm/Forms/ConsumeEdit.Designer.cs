@@ -37,6 +37,7 @@
             this.consume_num = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.label3);
             this.panelMain.Controls.Add(this.comboBox1);
             this.panelMain.Controls.Add(this.consume_num);
             this.panelMain.Controls.Add(this.label2);
@@ -128,6 +130,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "食材";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F);
+            this.label3.Location = new System.Drawing.Point(302, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Kg";
+            // 
             // ConsumeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -157,5 +169,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox consume_num;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

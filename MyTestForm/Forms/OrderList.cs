@@ -33,7 +33,7 @@ namespace MyTestForm.Forms
             var orderList = orderDao.Select(new { visit_record_id = visit_record_id });
             var dispList = new List<Object>();
             //总价计数
-            int totalCost = 0;
+            decimal totalCost = 0;
             //组装显示表
             foreach(Order order in orderList)
             {
@@ -47,7 +47,7 @@ namespace MyTestForm.Forms
                 totalCost += dishes.price;
             }
             this.dataGridView.DataSource = dispList;
-            this.TotalLabel.Text = "总计：" + totalCost;
+            this.TotalLabel.Text = "总计：" + totalCost + "元";
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace MyTestForm.domain
 
         public string dishes_name { get; set; }
 
-        public int price { get; set; }
+        public decimal price { get; set; }
 
         public bool is_deleted { get; set; }
 

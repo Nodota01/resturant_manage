@@ -14,9 +14,9 @@ namespace MyTestForm.domain
 
         public string meterial_name { get; set; }
 
-        public int price { get; set; }
+        public decimal price { get; set; }
 
-        public int storage { get; set; }
+        public decimal storage { get; set; }
 
         public bool is_deleted { get; set; }
 

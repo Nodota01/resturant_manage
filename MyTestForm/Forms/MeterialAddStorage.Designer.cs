@@ -34,6 +34,7 @@
             this.ExitButton = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.AddNumBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,11 +95,22 @@
             this.AddNumBox.Size = new System.Drawing.Size(100, 21);
             this.AddNumBox.TabIndex = 4;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F);
+            this.label3.Location = new System.Drawing.Point(265, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Kg";
+            // 
             // MeterialAddStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 190);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.AddNumBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.TextBox AddNumBox;
         private System.Windows.Forms.ToolStripButton ConfirmButton;
         private System.Windows.Forms.ToolStripButton ClearButton;
+        private System.Windows.Forms.Label label3;
     }
 }

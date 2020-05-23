@@ -46,7 +46,7 @@ namespace MyTestForm.Forms
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(NumTextBox.Text, @"^\d+\z")) {
+            if (Regex.IsMatch(NumTextBox.Text, @"^\d+\.\d+\z|^\d+\z")) {
                 //插入访问记录
                 VisitRecord visitRecord = new VisitRecord();
                 visitRecord.desk_id = this.desk_id;

@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.label6);
             this.panelMain.Controls.Add(this.gender);
             this.panelMain.Controls.Add(this.password);
             this.panelMain.Controls.Add(this.wage);
@@ -197,6 +199,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "姓名";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 12F);
+            this.label6.Location = new System.Drawing.Point(448, 248);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "元";
+            // 
             // EmployeeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox gender;
+        private System.Windows.Forms.Label label6;
     }
 }

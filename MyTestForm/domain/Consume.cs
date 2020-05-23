@@ -12,6 +12,6 @@ namespace MyTestForm.domain
 
         public string meterial_id { get; set; }
 
-        public int consume_num { get; set; }
+        public decimal consume_num { get; set; }
     }
 }
